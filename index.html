@@ -9,12 +9,15 @@ body {
         background-repeat:no-repeat;
        background-size:cover;
 } 
-.center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #73AD21;
-  padding: 5px;
-}
+.center { 
+             
+            position: fixed; 
+            background-color: blue; 
+            top: 50%; 
+            left: 50%; 
+            margin-top: -100px; 
+            margin-left: -250px; 
+        } 
     #container {
       display: flex;
       flex-direction: row;
@@ -49,6 +52,6 @@ h1
 
 
 <body>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G7RgN9ijwE4" align="center" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G7RgN9ijwE4" class="center" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
