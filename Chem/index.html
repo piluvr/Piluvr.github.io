@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script type="text/javascript" src="processing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.min.js"></script>    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Extra.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.min.js"></script>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>repl.it</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<style>
+	</style>
+  <h2 align="center"> Rice Table <h2>
+			<div align="center">
+				<select id="reactions">
+  <option value="reaction1">HClO₂ ⇌ ClO₂⁻ + H⁺ </option>
+  <option value="reaction2">HC₂H₃O₂ ⇌ C₂H₃O₂⁻ + H⁺</option>
+  <option value="reaction3">NH₄⁺ ⇌ NH₃⁺ + H⁺</option>
+  </select>
+  <input type="button" value= "Set Reaction!" onclick="returnK();">
+  </div>
+  <div align="center">
+  <p id= "test" value=""></p>
+  </div>
+ <div align="center" padding="5px">
+  <form id="sg1">
+  <label>Inital A (M)<input name="initA" type ="number" id="member1" value="" /></label>
+  <label>Initial B (M)<input name="initB" type ="number" id="member2" value="" /></label>
+  <label>Inital C (M)<input name="initC"type ="number"  id="member3" value="" /></label>
+  <input type="button" value="Go!" onclick="getChange()">
+</form>​
+</div>
+<div align="center" class="yeet">
+<ul id= "list1">
+    <li id="change1"></li>
+    <li id="change2"></li>
+    <li id="change3" class="last"></li>
+</ul>
+</div>
+<div align="center" class="yeet">
+<ul id="list2">
+    <li id="equi1"></li>
+    <li id="equi2"></li>
+    <li id="equi3" class="last" value="0"></li>
+</ul>
+</div>
+
+<div align="center">
+<canvas id='beaker' data-processing-sources="beaker.pde"></canvas>
+</div>
+<p align="center" id="exp"> </p>
+<script src="script.js"> 
+</script>	
+<script>
+</script>
+</body>
+</html>
