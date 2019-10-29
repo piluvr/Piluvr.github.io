@@ -16,6 +16,9 @@ label {
 .yeet ul li{
    display:inline;
  }
+ body {
+    background-color:#6981c7;
+}
 /*
 ul#list1 {
     width: 100%;
