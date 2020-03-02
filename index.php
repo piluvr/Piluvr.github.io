@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+<?php
+           session_start(); // Should always be on top
+           if(!isset($_SESSION['counter'])) { // It's the first visit in this session
+             $handle = fopen("counter.txt", "r"); 
+             if(!$handle){ 
+              echo "Could not open the file" ;
+               } 
+              else { 
+                $counter = ( int ) fread ($handle,20) ;
+                fclose ($handle) ;
+                $counter++ ; 
+                echo" <p> Visitor Count: ". $counter . " </p> " ; 
+                $handle = fopen("counter.txt", "w" ) ; 
+                fwrite($handle,$counter) ; 
+                fclose ($handle) ;
+                $_SESSION['counter'] = $counter;
+                }
+
+           } else { // It's not the first time, do not update the counter but show the total hits stored in session
+             $counter = $_SESSION['counter'];
+             echo" <p> Visitor Count: ". $counter . " </p> " ;
+           }
+?>
 <html>
 <head>
 <title>Piluvr's Website</title>
@@ -47,10 +70,13 @@ h1
 <h2><a href = "https://github.com/piluvr?tab=repositories" style="color:white" target="_blank">Repositories</h2>
 <h2><a href = "Page2.html" style="color:white" target="_blank">PC Build</h2>
 <h2><a href = "Chem/index.html" style="color:white" target="_blank">Chemistry!</h2>
-<h2><a href = "workers.html" style="color:white" target="_blank">School page</h2>
+<h2><a href = "workers.html" style="color:white" target="_blank">School page</h2></a>
 </div>
 <h1></h1>
 </head>
 <body>
+	<?php 
+	#echo" <p> Visitor Count: ". $counter . " </p> " ;
+	?>
 </body>
 </html>
